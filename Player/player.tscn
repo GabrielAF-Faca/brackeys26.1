@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1pslsrim8jm0" path="res://Components/input_component.tscn" id="3_gwnis"]
 [ext_resource type="PackedScene" uid="uid://qs2jqxlqdq03" path="res://Components/movement_component.tscn" id="4_k53q1"]
 [ext_resource type="PackedScene" uid="uid://dchr7xlkscf3q" path="res://Components/gravity_component.tscn" id="5_k53q1"]
-[ext_resource type="PackedScene" uid="uid://cqhms04ymwrn0" path="res://Components/JumpComponent.tscn" id="6_fhl08"]
+[ext_resource type="PackedScene" uid="uid://bkn871g6an27q" path="res://Components/advanced_jump_component.tscn" id="6_fhl08"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
 radius = 7.0
@@ -15,7 +15,7 @@ script = ExtResource("1_4ntmi")
 movement_component = NodePath("MovementComponent")
 input_component = NodePath("InputComponent")
 gravity_component = NodePath("GravityComponent")
-jump_component = NodePath("JumpComponent")
+jump_component = NodePath("AdvancedJumpComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=932148242]
 scale = Vector2(0.109375, 0.21875)
@@ -28,9 +28,10 @@ shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="MovementComponent" parent="." unique_id=1600407143 instance=ExtResource("4_k53q1")]
 speed = 400.0
-accel_speed = 20.0
-decel_speed = 50.0
+ground_accel_speed = 20.0
+ground_decel_speed = 30.0
 
 [node name="GravityComponent" parent="." unique_id=2127410976 instance=ExtResource("5_k53q1")]
 
-[node name="JumpComponent" parent="." unique_id=2000384206 instance=ExtResource("6_fhl08")]
+[node name="AdvancedJumpComponent" parent="." unique_id=721074383 instance=ExtResource("6_fhl08")]
+drag = 150.0
