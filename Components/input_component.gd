@@ -14,6 +14,6 @@ var activate_bullet_released: bool = false
 func _process(delta: float) -> void:
 	
 	input_horizontal = Input.get_axis("move_left", "move_right")
-	
-	jump = Input.is_action_just_released("jump")
-	
+
+func get_jump_input() -> bool:
+	return Input.is_action_just_pressed("jump")
