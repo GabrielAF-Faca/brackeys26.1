@@ -10,6 +10,5 @@ func _physics_process(delta: float) -> void:
 	gravity_component.handle_gravity(self, delta)
 	jump_component.handle_jump(self, input_component.get_jump_input(), input_component.get_jump_input_released())
 	
-	print(is_on_floor())
-		
+	
 	move_and_slide()
