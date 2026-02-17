@@ -5,14 +5,8 @@ var input_horizontal: float = 0.0
 
 var direction: Vector2 = Vector2.ZERO
 var jump: bool = false
-var interact_just_pressed: bool = false
-var interact_pressed: bool = false
-var interact_just_released: bool = false
-var activate_bullet_pressed: bool = false
-var activate_bullet_released: bool = false
 
 func _process(delta: float) -> void:
-	
 	input_horizontal = Input.get_axis("move_left", "move_right")
 
 func get_jump_input() -> bool:
