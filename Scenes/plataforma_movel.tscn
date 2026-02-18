@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dqtdr2hhumdom"]
+
+[ext_resource type="Texture2D" uid="uid://cdkcqflmlv2hh" path="res://Assets/MundoNormalPlaceholder.png" id="1_3gffj"]
+[ext_resource type="Script" uid="uid://c5ksq4lqm0rc3" path="res://Scripts/plataforma_movel.gd" id="1_5pa1n"]
+[ext_resource type="PackedScene" uid="uid://0enms6iafq5y" path="res://Components/changeable_component.tscn" id="3_wvtip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pa1n"]
+size = Vector2(48, 16)
+
+[sub_resource type="Curve2D" id="Curve2D_5pa1n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -121, 0, 0, 0, 0, 0, 110, 0)
+}
+point_count = 2
+
+[node name="PlataformaMovel" type="Node2D" unique_id=929982036 node_paths=PackedStringArray("changeable_component")]
+script = ExtResource("1_5pa1n")
+changeable_component = NodePath("ChangableComponent")
+
+[node name="Plataforma" type="AnimatableBody2D" parent="." unique_id=139104669]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma" unique_id=1495389136]
+scale = Vector2(3, 1)
+texture = ExtResource("1_3gffj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" unique_id=600506046]
+shape = SubResource("RectangleShape2D_5pa1n")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Plataforma" unique_id=1725882059]
+remote_path = NodePath("..")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Plataforma" unique_id=1335646663]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1251758029]
+curve = SubResource("Curve2D_5pa1n")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=163373676]
+position = Vector2(-121, 0)
+
+[node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_wvtip")]

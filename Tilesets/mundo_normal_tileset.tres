@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" format=3 uid="uid://dqmuj0liol0hc"]
+
+[ext_resource type="Texture2D" uid="uid://cdkcqflmlv2hh" path="res://Assets/MundoNormalPlaceholder.png" id="1_hkbjm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_753i8"]
+texture = ExtResource("1_hkbjm")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, -8, 8, 8, 8, 8, -8)
+
+[resource]
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_753i8")

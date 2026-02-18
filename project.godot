@@ -26,7 +26,8 @@ folder_colors={
 "res://Components/": "gray",
 "res://Player/": "blue",
 "res://Scenes/": "teal",
-"res://Scripts/": "purple"
+"res://Scripts/": "purple",
+"res://Tilesets/": "pink"
 }
 
 [input]
