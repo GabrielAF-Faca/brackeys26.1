@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://7772gd526k4u"]
 
-[ext_resource type="Script" uid="uid://c0bln1s5cvlgb" path="res://Scripts/mundo_bizarro.gd" id="1_spdxx"]
+[ext_resource type="Script" uid="uid://by7bddabc3xx8" path="res://Scripts/mundo.gd" id="1_spdxx"]
 [ext_resource type="Texture2D" uid="uid://jpo4w0misepv" path="res://Assets/MundoBizarroPlaceholder.png" id="1_w2l1y"]
+[ext_resource type="PackedScene" uid="uid://0enms6iafq5y" path="res://Components/changeable_component.tscn" id="3_flit5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4hkj"]
 texture = ExtResource("1_w2l1y")
@@ -13,8 +14,12 @@ physics_layer_0/collision_layer = 32
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_m4hkj")
 
-[node name="MundoBizarro" type="Node2D" unique_id=1086035201]
+[node name="MundoBizarro" type="Node2D" unique_id=1086035201 node_paths=PackedStringArray("changeable_component")]
 script = ExtResource("1_spdxx")
+changeable_component = NodePath("ChangableComponent")
+is_visible = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1912000331]
 tile_set = SubResource("TileSet_h0r8t")
+
+[node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_flit5")]

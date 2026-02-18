@@ -2,5 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bjs0bhydg162r" path="res://Components/change_world_component.gd" id="1_acsfu"]
 
-[node name="ChangeWorldComponent" type="Node" unique_id=15610224]
+[node name="ChangeWorldComponent" type="Node" unique_id=15610224 node_paths=PackedStringArray("cooldown_timer")]
 script = ExtResource("1_acsfu")
+cooldown_timer = NodePath("CooldownTimer")
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=814963631]
+wait_time = 0.3
+one_shot = true
