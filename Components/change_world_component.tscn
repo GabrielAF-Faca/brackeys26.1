@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjnto6qe65k8b"]
+
+[ext_resource type="Script" uid="uid://bjs0bhydg162r" path="res://Components/change_world_component.gd" id="1_acsfu"]
+
+[node name="ChangeWorldComponent" type="Node" unique_id=15610224]
+script = ExtResource("1_acsfu")
