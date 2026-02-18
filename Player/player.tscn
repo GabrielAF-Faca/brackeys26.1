@@ -31,6 +31,7 @@ shape = SubResource("RectangleShape2D_vtle1")
 speed = 400.0
 ground_accel_speed = 20.0
 ground_decel_speed = 30.0
+air_accel_speed = 10.0
 
 [node name="GravityComponent" parent="." unique_id=2127410976 instance=ExtResource("5_k53q1")]
 
