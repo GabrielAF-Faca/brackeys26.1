@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0enms6iafq5y"]
+
+[ext_resource type="Script" uid="uid://bjcbmbudo06g6" path="res://Components/changeable_component.gd" id="1_rlgp5"]
+
+[node name="ChangableComponent" type="Node" unique_id=799187561]
+script = ExtResource("1_rlgp5")

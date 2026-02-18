@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://m0cryea5ele0"]
 
-[ext_resource type="Script" uid="uid://by7bddabc3xx8" path="res://Scenes/mundo_normal.gd" id="1_753i8"]
+[ext_resource type="Script" uid="uid://by7bddabc3xx8" path="res://Scripts/mundo.gd" id="1_753i8"]
 [ext_resource type="Texture2D" uid="uid://cdkcqflmlv2hh" path="res://Assets/MundoNormalPlaceholder.png" id="1_q0wq8"]
+[ext_resource type="PackedScene" uid="uid://0enms6iafq5y" path="res://Components/changeable_component.tscn" id="3_sw6w6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_753i8"]
 texture = ExtResource("1_q0wq8")
@@ -13,8 +14,11 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_753i8")
 
-[node name="MundoNormal" type="Node2D" unique_id=364772870]
+[node name="MundoNormal" type="Node2D" unique_id=364772870 node_paths=PackedStringArray("changeable_component")]
 script = ExtResource("1_753i8")
+changeable_component = NodePath("ChangableComponent")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=986515271]
 tile_set = SubResource("TileSet_sw6w6")
+
+[node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_sw6w6")]
