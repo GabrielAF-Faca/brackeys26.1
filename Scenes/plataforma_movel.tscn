@@ -7,9 +7,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pa1n"]
 size = Vector2(32, 8)
 
+[sub_resource type="Gradient" id="Gradient_wvtip"]
+offsets = PackedFloat32Array(0, 0.11051213)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dccy8"]
+gradient = SubResource("Gradient_wvtip")
+fill = 1
+fill_from = Vector2(0.5, 0.51)
+fill_to = Vector2(0, 0)
+
 [sub_resource type="Curve2D" id="Curve2D_5pa1n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -71, 1, 0, 0, 0, 0, -71, -90)
+"points": PackedVector2Array(0, 0, 0, 0, -71, 1, 0, 0, 0, 0, -71, -85)
 }
 point_count = 2
 
@@ -35,6 +45,12 @@ remote_path = NodePath("..")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Plataforma" unique_id=1335646663]
 
+[node name="Node2D" type="Node2D" parent="Plataforma" unique_id=1843912283]
+
+[node name="PointLight2D" type="PointLight2D" parent="Plataforma/Node2D" unique_id=1437074725]
+color = Color(0, 1, 1, 0.64705884)
+texture = SubResource("GradientTexture2D_dccy8")
+
 [node name="Path2D" type="Path2D" parent="." unique_id=1251758029]
 curve = SubResource("Curve2D_5pa1n")
 
@@ -42,4 +58,5 @@ curve = SubResource("Curve2D_5pa1n")
 position = Vector2(-71, 1)
 rotation = -1.5707964
 
-[node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_wvtip")]
+[node name="ChangableComponent" parent="." unique_id=799187561 node_paths=PackedStringArray("hide_group") instance=ExtResource("3_wvtip")]
+hide_group = NodePath("../Plataforma/Node2D")

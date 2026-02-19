@@ -2,7 +2,29 @@
 
 [ext_resource type="Script" uid="uid://by7bddabc3xx8" path="res://Scripts/mundo.gd" id="1_spdxx"]
 [ext_resource type="TileSet" uid="uid://c30ld2rkjdqab" path="res://Tilesets/mundo_bizarro_tileset.tres" id="2_flit5"]
+[ext_resource type="Shader" uid="uid://qs8csndl3uoe" path="res://Assets/Shaders/dissolve.gdshader" id="2_p1d8v"]
 [ext_resource type="PackedScene" uid="uid://0enms6iafq5y" path="res://Components/changeable_component.tscn" id="3_flit5"]
+
+[sub_resource type="Gradient" id="Gradient_kry3j"]
+colors = PackedColorArray(1, 1, 1, 1, 0.55687726, 1, 0.9960689, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_21xkr"]
+gradient = SubResource("Gradient_kry3j")
+use_hdr = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6bp64"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_344ge"]
+width = 1024
+noise = SubResource("FastNoiseLite_6bp64")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_igk8p"]
+resource_local_to_scene = true
+shader = ExtResource("2_p1d8v")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_344ge")
+shader_parameter/burn_texture = SubResource("GradientTexture1D_21xkr")
+shader_parameter/integrity = 1.0
+shader_parameter/burn_size = 1.0650000030875
 
 [node name="MundoBizarro" type="Node2D" unique_id=1086035201 node_paths=PackedStringArray("changeable_component")]
 script = ExtResource("1_spdxx")
@@ -10,10 +32,15 @@ changeable_component = NodePath("ChangableComponent")
 is_visible = false
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1593384878]
+z_index = -3
+material = SubResource("ShaderMaterial_igk8p")
 tile_set = ExtResource("2_flit5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1912000331]
 z_index = 1
 tile_set = ExtResource("2_flit5")
 
-[node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_flit5")]
+[node name="ChangableComponent" parent="." unique_id=799187561 node_paths=PackedStringArray("hide_group") instance=ExtResource("3_flit5")]
+hide_group = NodePath("../HideGroup")
+
+[node name="HideGroup" type="Node2D" parent="." unique_id=1953846275]

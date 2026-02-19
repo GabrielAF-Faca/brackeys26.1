@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dtpybsitheabr"]
+
+[ext_resource type="Shader" uid="uid://qs8csndl3uoe" path="res://Assets/Shaders/dissolve.gdshader" id="1_whvv4"]
+
+[sub_resource type="Gradient" id="Gradient_kry3j"]
+colors = PackedColorArray(1, 1, 1, 1, 0.55687726, 1, 0.9960689, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_21xkr"]
+gradient = SubResource("Gradient_kry3j")
+use_hdr = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6bp64"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_344ge"]
+width = 1024
+noise = SubResource("FastNoiseLite_6bp64")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_whvv4")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_344ge")
+shader_parameter/burn_texture = SubResource("GradientTexture1D_21xkr")
+shader_parameter/integrity = 1.0
+shader_parameter/burn_size = 1.0650000030875

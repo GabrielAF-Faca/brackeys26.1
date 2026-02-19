@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 @onready var plataforma: AnimatableBody2D = $Plataforma
@@ -36,13 +35,15 @@ func change():
 
 
 func move_to_final():
+	path_follow_2d.progress_ratio = 0.0
 	var tween = get_tree().create_tween()
-	tween.tween_property(path_follow_2d, "progress_ratio", 1.0, tween_time_go).set_trans(tween_trans_go).set_ease(tween_ease_go)
+	tween.tween_property(path_follow_2d, "progress_ratio", 0.99, tween_time_go).set_trans(tween_trans_go).set_ease(tween_ease_go)
 	tween.tween_callback(move_to_start)
 
 func move_to_start():
+	path_follow_2d.progress_ratio = 1.0
 	var tween = get_tree().create_tween()
-	tween.tween_property(path_follow_2d, "progress_ratio", 0.0, tween_time_back).set_trans(tween_trans_back).set_ease(tween_ease_back)
+	tween.tween_property(path_follow_2d, "progress_ratio", 0.01, tween_time_back).set_trans(tween_trans_back).set_ease(tween_ease_back)
 	tween.tween_callback(move_to_final)
 
 func _process(delta: float) -> void:
