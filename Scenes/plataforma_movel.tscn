@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://0enms6iafq5y" path="res://Components/changeable_component.tscn" id="3_wvtip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pa1n"]
-size = Vector2(48, 16)
+size = Vector2(32, 8)
 
 [sub_resource type="Curve2D" id="Curve2D_5pa1n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -121, 0, 0, 0, 0, 0, 110, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -71, 1, 0, 0, 0, 0, -71, -90)
 }
 point_count = 2
 
@@ -18,12 +18,14 @@ script = ExtResource("1_5pa1n")
 changeable_component = NodePath("ChangableComponent")
 
 [node name="Plataforma" type="AnimatableBody2D" parent="." unique_id=139104669]
+position = Vector2(-71, 1)
 collision_layer = 16
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Plataforma" unique_id=1495389136]
-scale = Vector2(3, 1)
 texture = ExtResource("1_3gffj")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" unique_id=600506046]
 shape = SubResource("RectangleShape2D_5pa1n")
@@ -37,6 +39,7 @@ remote_path = NodePath("..")
 curve = SubResource("Curve2D_5pa1n")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=163373676]
-position = Vector2(-121, 0)
+position = Vector2(-71, 1)
+rotation = -1.5707964
 
 [node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_wvtip")]
