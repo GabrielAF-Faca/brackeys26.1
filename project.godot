@@ -23,6 +23,7 @@ Global="*uid://ciaxeyla1f18p"
 
 folder_colors={
 "res://Assets/": "yellow",
+"res://Assets/Shaders/": "red",
 "res://Components/": "gray",
 "res://Player/": "blue",
 "res://Scenes/": "teal",

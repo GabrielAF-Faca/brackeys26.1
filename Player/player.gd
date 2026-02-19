@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var jump_component: AdvancedJumpComponent
 @export var change_world_component: ChangeWorldComponent
 @export var hitbox_component: HitboxComponent
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 
 func _physics_process(delta: float) -> void:

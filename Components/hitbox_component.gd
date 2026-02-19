@@ -8,4 +8,3 @@ func handle_espinho_detection(body: CharacterBody2D):
 	for i in overlapping_bodies:
 		if i != body:
 			print(i)
-			break
