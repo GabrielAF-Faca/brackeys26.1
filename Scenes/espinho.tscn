@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://iw3hxhc8mehs"]
+
+[ext_resource type="Texture2D" uid="uid://cbj6w6iryvyr8" path="res://Assets/espinho.png" id="1_a7exk"]
+
+[node name="Node2D" type="Node2D" unique_id=662976178]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1954831070]
+position = Vector2(0, -4)
+texture = ExtResource("1_a7exk")

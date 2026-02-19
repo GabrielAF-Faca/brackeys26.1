@@ -8,6 +8,9 @@
 script = ExtResource("1_753i8")
 changeable_component = NodePath("ChangableComponent")
 
+[node name="Background" type="TileMapLayer" parent="." unique_id=1957563599]
+tile_set = ExtResource("2_sw6w6")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=986515271]
 tile_set = ExtResource("2_sw6w6")
 

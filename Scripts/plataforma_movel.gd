@@ -20,7 +20,7 @@ extends Node2D
 
 func _ready() -> void:
 	Global.change_world.connect(change)
-	plataforma.position = path_follow_2d.position
+	plataforma.position = path_2d.curve.get_point_position(0)
 	
 	if not is_mundo_normal:
 		plataforma.set_collision_layer_value(5, false)
@@ -47,4 +47,3 @@ func move_to_start():
 
 func _process(delta: float) -> void:
 	plataforma.position = path_follow_2d.position
-	

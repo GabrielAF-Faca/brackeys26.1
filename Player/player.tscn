@@ -7,17 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://dchr7xlkscf3q" path="res://Components/gravity_component.tscn" id="5_k53q1"]
 [ext_resource type="PackedScene" uid="uid://bkn871g6an27q" path="res://Components/advanced_jump_component.tscn" id="6_fhl08"]
 [ext_resource type="PackedScene" uid="uid://bjnto6qe65k8b" path="res://Components/change_world_component.tscn" id="7_vtle1"]
+[ext_resource type="PackedScene" uid="uid://deta8dkqkosa4" path="res://Components/hitbox_component.tscn" id="8_od3ui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtle1"]
-size = Vector2(16, 16)
+size = Vector2(14, 16)
 
-[node name="Player" type="CharacterBody2D" unique_id=2019573844 node_paths=PackedStringArray("movement_component", "input_component", "gravity_component", "jump_component", "change_world_component")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00tjw"]
+size = Vector2(14, 14)
+
+[node name="Player" type="CharacterBody2D" unique_id=2019573844 node_paths=PackedStringArray("movement_component", "input_component", "gravity_component", "jump_component", "change_world_component", "hitbox_component")]
+collision_layer = 0
+collision_mask = 16
 script = ExtResource("1_4ntmi")
 movement_component = NodePath("MovementComponent")
 input_component = NodePath("InputComponent")
 gravity_component = NodePath("GravityComponent")
 jump_component = NodePath("AdvancedJumpComponent")
 change_world_component = NodePath("ChangeWorldComponent")
+hitbox_component = NodePath("HitboxComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=932148242]
 texture = ExtResource("2_fhl08")
@@ -28,9 +35,9 @@ shape = SubResource("RectangleShape2D_vtle1")
 [node name="InputComponent" parent="." unique_id=1790605609 instance=ExtResource("3_gwnis")]
 
 [node name="MovementComponent" parent="." unique_id=1600407143 instance=ExtResource("4_k53q1")]
-speed = 400.0
-ground_accel_speed = 20.0
-ground_decel_speed = 30.0
+speed = 200.0
+ground_accel_speed = 30.0
+ground_decel_speed = 40.0
 air_accel_speed = 10.0
 
 [node name="GravityComponent" parent="." unique_id=2127410976 instance=ExtResource("5_k53q1")]
@@ -39,3 +46,10 @@ air_accel_speed = 10.0
 drag = 150.0
 
 [node name="ChangeWorldComponent" parent="." unique_id=15610224 instance=ExtResource("7_vtle1")]
+
+[node name="HitboxComponent" parent="." unique_id=676081893 instance=ExtResource("8_od3ui")]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1100318166]
+shape = SubResource("RectangleShape2D_00tjw")

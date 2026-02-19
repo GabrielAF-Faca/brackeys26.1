@@ -9,7 +9,11 @@ script = ExtResource("1_spdxx")
 changeable_component = NodePath("ChangableComponent")
 is_visible = false
 
+[node name="Background" type="TileMapLayer" parent="." unique_id=1593384878]
+tile_set = ExtResource("2_flit5")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1912000331]
+z_index = 1
 tile_set = ExtResource("2_flit5")
 
 [node name="ChangableComponent" parent="." unique_id=799187561 instance=ExtResource("3_flit5")]
