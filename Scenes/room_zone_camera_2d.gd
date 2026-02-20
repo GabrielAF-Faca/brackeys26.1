@@ -8,6 +8,7 @@ var player_node: CharacterBody2D
 
 var follow_player: bool = false
 
+
 func _ready() -> void:
 	add_to_group("RoomZoneCamera")
 	player_node = get_tree().get_first_node_in_group("player")
@@ -69,9 +70,12 @@ func apply_zone_settings():
 	
 	if active_zone.limit_camera:
 		limit_enabled = true
-		limit_left = active_zone.limit_left
-		limit_top = active_zone.limit_top
-		limit_right = active_zone.limit_right
-		limit_bottom = active_zone.limit_bottom
+		
+		var top_left_limit = active_zone.get_top_left_limit()
+		var bottom_right_limit = active_zone.get_bottom_right_limit()
+		limit_left = top_left_limit.x
+		limit_top = top_left_limit.y
+		limit_right = bottom_right_limit.x
+		limit_bottom = bottom_right_limit.y
 	else:
 		limit_enabled = false

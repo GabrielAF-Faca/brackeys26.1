@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dw2po25qr4qy" path="res://Scenes/LevelTransition.tscn" id="2_30ran"]
 
 [node name="RoomZoneCamera2D" type="Camera2D" unique_id=415073114]
+zoom = Vector2(2, 2)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true

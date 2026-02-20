@@ -7,10 +7,10 @@ class_name RoomZoneArea2D
 @export var fixed_position: Vector2 = Vector2.ZERO
 
 @export var limit_camera: bool = false
-@export var limit_left: float = -10000
-@export var limit_top: float = -10000
-@export var limit_right: float = 10000
-@export var limit_bottom: float = 10000
+
+@export var marker_top_left: Marker2D
+@export var marker_bottom_right: Marker2D
+
 
 var collisionshape: CollisionShape2D
 var cam_node: RoomZoneCamera2D
@@ -21,6 +21,11 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
+func get_top_left_limit() -> Vector2:
+	return marker_top_left.global_position
+
+func get_bottom_right_limit() -> Vector2:
+	return marker_bottom_right.global_position
 
 func _on_body_entered(body: Node2D) -> void:
 	print("pau")

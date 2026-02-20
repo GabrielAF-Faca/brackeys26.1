@@ -159,36 +159,44 @@ update_rotation = false
 update_scale = false
 
 [node name="RoomZoneCamera2D" parent="." unique_id=415073114 instance=ExtResource("9_ynf5e")]
-position = Vector2(110, 18)
-
-[node name="RoomZoneArea2D" parent="." unique_id=617669781 instance=ExtResource("9_hptm8")]
 visible = false
+position = Vector2(160, 90)
+limit_enabled = false
+
+[node name="RoomZoneArea2D" parent="." unique_id=617669781 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right") instance=ExtResource("9_hptm8")]
 position = Vector2(10, -2)
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
+follow_player = true
 limit_camera = true
-limit_left = 80.0
-limit_top = 40.0
-limit_right = 305.0
-limit_bottom = 211.0
+marker_top_left = NodePath("Marker2D")
+marker_bottom_right = NodePath("Marker2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D" unique_id=268079372]
 position = Vector2(142.5, 108)
 shape = SubResource("RectangleShape2D_d1ilt")
 
-[node name="RoomZoneArea2D2" parent="." unique_id=1729648526 instance=ExtResource("9_hptm8")]
-visible = false
+[node name="Marker2D" type="Marker2D" parent="RoomZoneArea2D" unique_id=1754442965]
+position = Vector2(9, 2)
+
+[node name="Marker2D2" type="Marker2D" parent="RoomZoneArea2D" unique_id=712131556]
+position = Vector2(295, 206)
+
+[node name="RoomZoneArea2D2" parent="." unique_id=1729648526 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right") instance=ExtResource("9_hptm8")]
 position = Vector2(305, 0)
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 follow_player = true
 limit_camera = true
-limit_left = 305.0
-limit_top = 0.0
-limit_right = 880.0
-limit_bottom = 211.0
+marker_top_left = NodePath("Marker2D2")
+marker_bottom_right = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D2" unique_id=1971663553]
 position = Vector2(287.5, 106)
 shape = SubResource("RectangleShape2D_ynf5e")
+
+[node name="Marker2D2" type="Marker2D" parent="RoomZoneArea2D2" unique_id=1235633765]
+
+[node name="Marker2D" type="Marker2D" parent="RoomZoneArea2D2" unique_id=224925819]
+position = Vector2(575, 206)
 
 [node name="Player" parent="." unique_id=2019573844 instance=ExtResource("1_jjgbg")]
 position = Vector2(80, 114)
@@ -197,3 +205,4 @@ collision_layer = 64
 [editable path="MundoNormal"]
 [editable path="MundoBizarro"]
 [editable path="PlataformaMovel"]
+[editable path="RoomZoneArea2D2"]
