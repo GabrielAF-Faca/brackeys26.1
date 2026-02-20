@@ -7,10 +7,3 @@ func _ready() -> void:
 
 func emit_shockwave():
 	emitting = true
-
-
-#func _process(delta: float) -> void:
-	#if emitting:
-		#print("bosta")
-	#else:
-		#print("merda")

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://btfvo04mbfdhc"]
+
+[ext_resource type="Shader" uid="uid://xpvvcvgvjo1c" path="res://Assets/Shaders/disappear.tres" id="1_6fply"]
+
+[resource]
+shader = ExtResource("1_6fply")
+shader_parameter/dissolve_rate = -1.39999997615814
+shader_parameter/size = 0.055
+shader_parameter/color = Color(0, 1, 1, 1)

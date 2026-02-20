@@ -16,6 +16,11 @@ func handle_horizontal_movement(body: CharacterBody2D, direction: float):
 		velocity_change_speed = air_accel_speed if direction != 0.0 else air_decel_speed
 		
 	body.velocity.x = move_toward(body.velocity.x, direction * speed, velocity_change_speed)
-	
-	
+
+func handle_death_movement(body:CharacterBody2D):
+	body.velocity = body.velocity.move_toward(Vector2.ZERO, air_decel_speed)
+
+func apply_impulse_to_direction(body: CharacterBody2D, direction: Vector2):
+	body.velocity = direction * speed
+
  
