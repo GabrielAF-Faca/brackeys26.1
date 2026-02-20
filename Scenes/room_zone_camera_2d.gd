@@ -4,23 +4,19 @@ class_name RoomZoneCamera2D
 var overlapping_zones: Array = []
 var active_zone: Area2D
 
-var player_node: CharacterBody2D
+@export var player_node: CharacterBody2D
 
 var follow_player: bool = false
 
 
 func _ready() -> void:
 	add_to_group("RoomZoneCamera")
-	player_node = get_tree().get_first_node_in_group("player")
 
 func _physics_process(_delta: float) -> void:
 	if follow_player and player_node:
 		global_position = player_node.global_position
 
 func _process(_delta: float) -> void:
-	if !player_node:
-		player_node = get_tree().get_first_node_in_group("player")
-		return
 	
 	if overlapping_zones.is_empty() or (overlapping_zones.size() == 1 and active_zone == overlapping_zones[0]):
 		return

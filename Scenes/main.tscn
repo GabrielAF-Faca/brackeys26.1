@@ -171,18 +171,21 @@ curve = SubResource("Curve2D_d1ilt")
 [node name="PathFollow2D" parent="PlataformaMovel/Path2D" index="0" unique_id=163373676]
 rotation = -1.5707964
 
-[node name="RoomZoneCamera2D" parent="." unique_id=415073114 instance=ExtResource("9_ynf5e")]
+[node name="RoomZoneCamera2D" parent="." unique_id=415073114 node_paths=PackedStringArray("player_node") instance=ExtResource("9_ynf5e")]
 visible = false
 position = Vector2(160, 90)
 limit_enabled = false
+player_node = NodePath("../Player")
 
-[node name="RoomZoneArea2D" parent="." unique_id=617669781 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right") instance=ExtResource("9_hptm8")]
+[node name="RoomZoneArea2D" parent="." unique_id=617669781 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right", "collisionshape", "cam_node") instance=ExtResource("9_hptm8")]
 position = Vector2(10, -2)
 zoom = Vector2(2, 2)
 follow_player = true
 limit_camera = true
 marker_top_left = NodePath("Marker2D")
 marker_bottom_right = NodePath("Marker2D2")
+collisionshape = NodePath("CollisionShape2D")
+cam_node = NodePath("../RoomZoneCamera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D" unique_id=268079372]
 position = Vector2(142.5, 108)
@@ -194,13 +197,15 @@ position = Vector2(9, 2)
 [node name="Marker2D2" type="Marker2D" parent="RoomZoneArea2D" unique_id=712131556]
 position = Vector2(295, 206)
 
-[node name="RoomZoneArea2D2" parent="." unique_id=1729648526 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right") instance=ExtResource("9_hptm8")]
+[node name="RoomZoneArea2D2" parent="." unique_id=1729648526 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right", "collisionshape", "cam_node") instance=ExtResource("9_hptm8")]
 position = Vector2(305, 0)
 zoom = Vector2(2, 2)
 follow_player = true
 limit_camera = true
 marker_top_left = NodePath("Marker2D2")
 marker_bottom_right = NodePath("Marker2D")
+collisionshape = NodePath("CollisionShape2D")
+cam_node = NodePath("../RoomZoneCamera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D2" unique_id=1971663553]
 position = Vector2(287.5, 106)

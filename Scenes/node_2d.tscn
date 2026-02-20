@@ -82,8 +82,8 @@ tile_map_data = PackedByteArray("AAD/////AAAEAAIAAAD//wAAAAAEAAIAAAD//wEAAAAEAAI
 [node name="TileMapLayer" parent="MundoBizarro" index="1" unique_id=1912000331]
 tile_map_data = PackedByteArray("AAD//w8AAAAAAAAAAAAAAA8AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAPAA4AAAACAAEAAAAQAA4AAAACAAEAAAARAA4AAAACAAEAAAASAA4AAAACAAEAAAATAA4AAAACAAEAAAAUAA4AAAACAAEAAAAVAA4AAAACAAEAAAD//xAAAAAAAAEAAAD//xEAAAAAAAEAAAD//xIAAAAAAAEAAAAAABAAAAAAAAEAAAAAABEAAAAAAAEAAAAAABIAAAAAAAEAAAABABAAAAAAAAEAAAABABEAAAAAAAEAAAABABIAAAAAAAEAAAACABAAAAAAAAEAAAACABEAAAAAAAEAAAACABIAAAAAAAEAAAADABAAAAAAAAEAAAADABEAAAAAAAEAAAADABIAAAAAAAEAAAAEABAAAAAAAAEAAAAEABEAAAAAAAEAAAAEABIAAAAAAAEAAAAFABAAAAAAAAEAAAAFABEAAAAAAAEAAAAFABIAAAAAAAEAAAAGABAAAAAAAAEAAAAGABEAAAAAAAEAAAAGABIAAAAAAAEAAAAHABAAAAAAAAEAAAAHABEAAAAAAAEAAAAHABIAAAAAAAEAAAAIABAAAAAAAAEAAAAIABEAAAAAAAEAAAAIABIAAAAAAAEAAAAJABAAAAAAAAEAAAAJABEAAAAAAAEAAAAJABIAAAAAAAEAAAAKABAAAAAAAAEAAAAKABEAAAAAAAEAAAAKABIAAAAAAAEAAAALABAAAAAAAAEAAAALABEAAAAAAAEAAAALABIAAAAAAAEAAAAMABAAAAAAAAEAAAAMABEAAAAAAAEAAAAMABIAAAAAAAEAAAANABAAAAAAAAEAAAANABEAAAAAAAEAAAANABIAAAAAAAEAAAAOABAAAAAAAAEAAAAOABEAAAAAAAEAAAAOABIAAAAAAAEAAAAPABAAAAAAAAEAAAAPABEAAAAAAAEAAAAPABIAAAAAAAEAAAAQABAAAAAAAAEAAAAQABEAAAAAAAEAAAAQABIAAAAAAAEAAAARABAAAAAAAAEAAAARABEAAAAAAAEAAAARABIAAAAAAAEAAAASABAAAAAAAAEAAAASABEAAAAAAAEAAAASABIAAAAAAAEAAAATABAAAAAAAAEAAAATABEAAAAAAAEAAAATABIAAAAAAAEAAAAUABAAAAAAAAEAAAAUABEAAAAAAAEAAAAUABIAAAAAAAEAAAAVABAAAAAAAAEAAAAVABEAAAAAAAEAAAAVABIAAAAAAAEAAAA=")
 
-[node name="RoomZoneArea2D" type="Area2D" parent="." unique_id=206045104 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right")]
-collision_layer = 0
+[node name="RoomZoneArea2D" type="Area2D" parent="." unique_id=206045104 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right", "collisionshape", "cam_node")]
+collision_layer = 192
 collision_mask = 192
 script = ExtResource("5_u7krg")
 zoom = Vector2(3, 3)
@@ -91,6 +91,8 @@ follow_player = true
 limit_camera = true
 marker_top_left = NodePath("Marker2D")
 marker_bottom_right = NodePath("Marker2D2")
+collisionshape = NodePath("CollisionShape2D")
+cam_node = NodePath("../RoomZoneCamera2D")
 metadata/_custom_type_script = "uid://jc05bni0hj8c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D" unique_id=2119713715]
@@ -103,8 +105,8 @@ position = Vector2(-6, 63)
 [node name="Marker2D2" type="Marker2D" parent="RoomZoneArea2D" unique_id=2058071590]
 position = Vector2(51, 118)
 
-[node name="RoomZoneArea2D2" type="Area2D" parent="." unique_id=439396277 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right")]
-collision_layer = 0
+[node name="RoomZoneArea2D2" type="Area2D" parent="." unique_id=439396277 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right", "collisionshape", "cam_node")]
+collision_layer = 192
 collision_mask = 192
 script = ExtResource("5_u7krg")
 zoom = Vector2(3, 3)
@@ -112,6 +114,8 @@ follow_player = true
 limit_camera = true
 marker_top_left = NodePath("Marker2D")
 marker_bottom_right = NodePath("Marker2D2")
+collisionshape = NodePath("CollisionShape2D")
+cam_node = NodePath("../RoomZoneCamera2D")
 metadata/_custom_type_script = "uid://jc05bni0hj8c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D2" unique_id=739080512]
@@ -124,10 +128,11 @@ position = Vector2(51, 63)
 [node name="Marker2D2" type="Marker2D" parent="RoomZoneArea2D2" unique_id=367615258]
 position = Vector2(400, 123)
 
-[node name="RoomZoneCamera2D" type="Camera2D" parent="." unique_id=2013084589]
+[node name="RoomZoneCamera2D" type="Camera2D" parent="." unique_id=2013084589 node_paths=PackedStringArray("player_node")]
 position = Vector2(15, 81)
 zoom = Vector2(2, 2)
 script = ExtResource("6_tx0tn")
+player_node = NodePath("../Player")
 metadata/_custom_type_script = "uid://bddlurtn331qu"
 
 [node name="Player" parent="." unique_id=2019573844 instance=ExtResource("4_wjtap")]
