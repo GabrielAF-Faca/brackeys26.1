@@ -8,26 +8,33 @@
 shader = ExtResource("1_5kjx6")
 shader_parameter/DisplacementStrength = 0.30000001192093
 
+[sub_resource type="Curve" id="Curve_p1ey0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wdewn"]
+curve = SubResource("Curve_p1ey0")
+
 [sub_resource type="Curve" id="Curve_5htga"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.9688385, 0.363029), 0.8266566, 0.8266566, 0, 0, Vector2(1, 1), 13.168725, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_p5o4e"]
 curve = SubResource("Curve_5htga")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gu6f8"]
+resource_local_to_scene = true
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
-scale_min = 5.0
-scale_max = 5.0
 scale_curve = SubResource("CurveTexture_p5o4e")
+alpha_curve = SubResource("CurveTexture_wdewn")
 
 [node name="GPUParticles2D" type="GPUParticles2D" unique_id=1015782784]
 material = SubResource("ShaderMaterial_apopc")
 emitting = false
 amount = 1
 texture = ExtResource("2_p1ey0")
-lifetime = 0.2
+lifetime = 0.6
 one_shot = true
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_gu6f8")

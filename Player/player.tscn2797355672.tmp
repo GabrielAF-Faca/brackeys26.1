@@ -197,7 +197,7 @@ animations = [{
 size = Vector2(14, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00tjw"]
-size = Vector2(9, 16)
+size = Vector2(14, 14)
 
 [sub_resource type="Curve" id="Curve_p1ey0"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -213,7 +213,7 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_p5o4e"]
 curve = SubResource("Curve_5htga")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x3vf3"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pisgm"]
 resource_local_to_scene = true
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
@@ -221,7 +221,6 @@ scale_curve = SubResource("CurveTexture_p5o4e")
 alpha_curve = SubResource("CurveTexture_wdewn")
 
 [node name="Player" type="CharacterBody2D" unique_id=2019573844 node_paths=PackedStringArray("movement_component", "input_component", "gravity_component", "jump_component", "change_world_component", "animation_component", "hitbox_component")]
-z_index = 5
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_4ntmi")
@@ -236,7 +235,8 @@ hitbox_component = NodePath("HitboxComponent")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=750953739]
 sprite_frames = SubResource("SpriteFrames_755ss")
 animation = &"death"
-autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1961411854]
 visible = false
@@ -261,13 +261,13 @@ drag = 150.0
 sprite = NodePath("../AnimatedSprite2D")
 
 [node name="HitboxComponent" parent="." unique_id=676081893 instance=ExtResource("8_od3ui")]
+visible = false
 collision_layer = 0
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1100318166]
-position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_00tjw")
 
 [node name="GPUParticles2D" parent="." unique_id=1015782784 instance=ExtResource("9_00tjw")]
 position = Vector2(0, 8)
-process_material = SubResource("ParticleProcessMaterial_x3vf3")
+process_material = SubResource("ParticleProcessMaterial_pisgm")

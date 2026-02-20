@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0enms6iafq5y" path="res://Components/changeable_component.tscn" id="3_flit5"]
 
 [sub_resource type="Gradient" id="Gradient_kry3j"]
-colors = PackedColorArray(1, 1, 1, 1, 0.55687726, 1, 0.9960689, 1)
+colors = PackedColorArray(0, 0, 0, 0.9882353, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_21xkr"]
 gradient = SubResource("Gradient_kry3j")
