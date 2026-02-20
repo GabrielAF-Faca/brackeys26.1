@@ -10,7 +10,7 @@
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1bvp3"]
 gradient = SubResource("Gradient_h2yge")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rk58m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_avicq"]
 resource_local_to_scene = true
 shader = ExtResource("2_avicq")
 shader_parameter/base_color = Color(0, 0, 0, 1)
@@ -26,7 +26,7 @@ shader_parameter/shape_scroll = Vector2(0.05, 0.05)
 shader_parameter/shape_feathering = 0.0
 shader_parameter/shape_treshold = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_74ygr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rk58m"]
 resource_local_to_scene = true
 shader = ExtResource("2_avicq")
 shader_parameter/base_color = Color(0, 0, 0, 1)
@@ -52,14 +52,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TCircleOut" parent="Control" unique_id=105919367 instance=ExtResource("1_6cquy")]
-material = SubResource("ShaderMaterial_rk58m")
+material = SubResource("ShaderMaterial_avicq")
 layout_mode = 1
 offset_right = 1112.0
 offset_bottom = 607.0
 factor = 0.0
 
 [node name="TCircleOut2" parent="Control" unique_id=1344405958 instance=ExtResource("1_6cquy")]
-material = SubResource("ShaderMaterial_74ygr")
+material = SubResource("ShaderMaterial_rk58m")
 layout_mode = 1
 offset_left = 1152.0
 offset_top = 647.0

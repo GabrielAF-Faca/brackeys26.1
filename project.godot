@@ -39,6 +39,10 @@ folder_colors={
 "res://Tilesets/": "pink"
 }
 
+[global_group]
+
+player=""
+
 [input]
 
 move_left={
