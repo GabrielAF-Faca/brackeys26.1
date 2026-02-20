@@ -19,7 +19,6 @@ var is_dead: bool = false
 func _ready() -> void:
 	add_to_group("player")
 
-
 func _physics_process(delta: float) -> void:
 	if not is_dead:
 		movement_component.handle_horizontal_movement(self, input_component.input_horizontal)
@@ -45,9 +44,9 @@ func die():
 	tween.tween_property(gravity_component, "gravity", 0, 0.7).set_ease(Tween.EASE_OUT)
 	tween.parallel()
 	tween.tween_property(animated_sprite_2d.material, "shader_parameter/dissolve_rate", 1.0, 1).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(Global.transition_level.bind("res://Scenes/main.tscn"))
 	
 	
 	velocity = Vector2.ZERO
 	movement_component.apply_impulse_to_direction(self, -impulse_direction)
 	animation_component.handle_death_animation()
-	

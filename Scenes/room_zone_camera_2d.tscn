@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b53eorilp8v1y"]
 
 [ext_resource type="Script" uid="uid://bddlurtn331qu" path="res://Scenes/room_zone_camera_2d.gd" id="1_dwgml"]
-[ext_resource type="PackedScene" uid="uid://dw2po25qr4qy" path="res://Scenes/LevelTransition.tscn" id="2_30ran"]
 
 [node name="RoomZoneCamera2D" type="Camera2D" unique_id=415073114]
 zoom = Vector2(2, 2)
@@ -10,5 +9,3 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("1_dwgml")
-
-[node name="CanvasLayer" parent="." unique_id=1116880166 instance=ExtResource("2_30ran")]
