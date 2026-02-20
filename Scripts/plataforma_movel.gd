@@ -24,6 +24,7 @@ func _ready() -> void:
 	if not is_mundo_normal:
 		plataforma.set_collision_layer_value(5, false)
 		plataforma.set_collision_layer_value(6, true)
+		change()
 		
 	move_to_final()
 
