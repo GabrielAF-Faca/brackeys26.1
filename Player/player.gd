@@ -8,14 +8,17 @@ extends CharacterBody2D
 @export var animation_component: AnimationComponent
 @export var hitbox_component: HitboxComponent
 
-@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+@onready var gpu_particles_2d: ShockwaveEmitter = $GPUParticles2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const DISAPPEAR = preload("uid://btfvo04mbfdhc")
 
-
-
 var is_dead: bool = false
+
+
+func _ready() -> void:
+	add_to_group("player")
+
 
 func _physics_process(delta: float) -> void:
 	if not is_dead:
@@ -30,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	
 	gravity_component.handle_gravity(self, delta)
 	move_and_slide()
+
 
 func die():
 	animated_sprite_2d.material = DISAPPEAR

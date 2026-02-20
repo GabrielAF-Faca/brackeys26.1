@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dw2po25qr4qy"]
+
+[ext_resource type="PackedScene" uid="uid://bgr1gr0wt8sjt" path="res://Assets/TransitionKit/transitions/t_circle.tscn" id="1_6cquy"]
+[ext_resource type="Script" uid="uid://dfbgb2a1ysvbj" path="res://Scenes/level_transition.gd" id="1_avicq"]
+[ext_resource type="Shader" uid="uid://ovrd5ydp8p0q" path="res://Assets/TransitionKit/src/shader/transition.gdshader" id="2_avicq"]
+[ext_resource type="Texture2D" uid="uid://bomu11y700fxp" path="res://Assets/TransitionKit/src/texture/transition_shape/basic/circle.tres" id="3_rk58m"]
+
+[sub_resource type="Gradient" id="Gradient_h2yge"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1bvp3"]
+gradient = SubResource("Gradient_h2yge")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rk58m"]
+resource_local_to_scene = true
+shader = ExtResource("2_avicq")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/node_resolution = Vector2(1152, 647)
+shader_parameter/factor = 0.0
+shader_parameter/width = 0.3
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_1bvp3")
+shader_parameter/gradient_fixed = false
+shader_parameter/shape_texture = ExtResource("3_rk58m")
+shader_parameter/shape_tiling = 32.0
+shader_parameter/shape_rotation = 0.0
+shader_parameter/shape_scroll = Vector2(0.05, 0.05)
+shader_parameter/shape_feathering = 0.0
+shader_parameter/shape_treshold = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74ygr"]
+resource_local_to_scene = true
+shader = ExtResource("2_avicq")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/node_resolution = Vector2(1152, 647)
+shader_parameter/factor = 0.0
+shader_parameter/width = 0.3
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_1bvp3")
+shader_parameter/gradient_fixed = false
+shader_parameter/shape_texture = ExtResource("3_rk58m")
+shader_parameter/shape_tiling = 32.0
+shader_parameter/shape_rotation = 0.0
+shader_parameter/shape_scroll = Vector2(0.05, 0.05)
+shader_parameter/shape_feathering = 0.0
+shader_parameter/shape_treshold = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1116880166]
+script = ExtResource("1_avicq")
+
+[node name="Control" type="Control" parent="." unique_id=992736108]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TCircleOut" parent="Control" unique_id=105919367 instance=ExtResource("1_6cquy")]
+material = SubResource("ShaderMaterial_rk58m")
+layout_mode = 1
+offset_right = 1112.0
+offset_bottom = 607.0
+factor = 0.0
+
+[node name="TCircleOut2" parent="Control" unique_id=1344405958 instance=ExtResource("1_6cquy")]
+material = SubResource("ShaderMaterial_74ygr")
+layout_mode = 1
+offset_left = 1152.0
+offset_top = 647.0
+offset_right = 2264.0
+offset_bottom = 1254.0
+rotation = -3.1415927
+factor = 0.0

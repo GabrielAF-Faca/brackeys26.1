@@ -19,7 +19,7 @@ fill_to = Vector2(0, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_5pa1n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -71, 1, 0, 0, 0, 0, -71, -85)
+"points": PackedVector2Array(0, 0, 0, 0, -71, 1, 0, 0, 0, 0, -71, -93)
 }
 point_count = 2
 
