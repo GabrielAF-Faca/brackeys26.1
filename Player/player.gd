@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	animated_sprite_2d.material = DISAPPEAR
+	animated_sprite_2d.material.set("shader_parameter/dissolve_rate", -1.4)
 	is_dead = true
 	var last_direction = velocity.normalized()
 	var impulse_direction = Vector2(last_direction.x, 1.5 if gravity_component.is_falling else 0)
