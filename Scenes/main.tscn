@@ -135,14 +135,20 @@ scale = Vector2(1.0937501, 0.27636704)
 color = Color(1, 0, 0, 0.7058824)
 texture = SubResource("GradientTexture2D_kry3j")
 
-[node name="Icon2" type="Sprite2D" parent="MundoBizarro/HideGroup" index="1" unique_id=1844165500]
+[node name="PointLight2D2" type="PointLight2D" parent="MundoBizarro/HideGroup" index="1" unique_id=1533743133]
+position = Vector2(212, 495.99997)
+scale = Vector2(1.0937501, 0.27636704)
+color = Color(1, 0, 0, 0.7058824)
+texture = SubResource("GradientTexture2D_kry3j")
+
+[node name="Icon2" type="Sprite2D" parent="MundoBizarro/HideGroup" index="2" unique_id=1844165500]
 z_index = 1
 material = SubResource("ShaderMaterial_d1ilt")
 position = Vector2(212, 494.50003)
 scale = Vector2(0.4375, 0.05468783)
 texture = ExtResource("5_344ge")
 
-[node name="Icon" type="Sprite2D" parent="MundoBizarro/HideGroup" index="2" unique_id=1757166425]
+[node name="Icon" type="Sprite2D" parent="MundoBizarro/HideGroup" index="3" unique_id=1757166425]
 z_index = 1
 material = SubResource("ShaderMaterial_d1ilt")
 position = Vector2(40, 478.5)
@@ -178,6 +184,7 @@ limit_enabled = false
 player_node = NodePath("../Player")
 
 [node name="RoomZoneArea2D" parent="." unique_id=617669781 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right", "collisionshape", "cam_node") instance=ExtResource("9_hptm8")]
+visible = false
 position = Vector2(10, -2)
 zoom = Vector2(2, 2)
 follow_player = true
@@ -198,6 +205,7 @@ position = Vector2(9, 2)
 position = Vector2(295, 206)
 
 [node name="RoomZoneArea2D2" parent="." unique_id=1729648526 node_paths=PackedStringArray("marker_top_left", "marker_bottom_right", "collisionshape", "cam_node") instance=ExtResource("9_hptm8")]
+visible = false
 position = Vector2(305, 0)
 zoom = Vector2(2, 2)
 follow_player = true
