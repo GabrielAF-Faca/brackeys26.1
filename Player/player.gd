@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
+	Global.shake_screen.emit(2, 0.5)
 	animated_sprite_2d.material = DISAPPEAR
 	animated_sprite_2d.material.set("shader_parameter/dissolve_rate", -1.4)
 	is_dead = true
